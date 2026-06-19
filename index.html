@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Antonio Texas, Veracruz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('fondo1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        .contenedor {
+            background-color: rgba(255, 255, 255, 0.85);
+            margin: 50px auto;
+            width: 80%;
+            max-width: 900px;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 30px;
+            max-width: 250px;
+        }
+        h1 {
+            font: italic bold 36px Arial;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .video-contenedor {
+            margin: 30px auto;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+        .boton {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .boton:hover {
+            background-color: #219653;
+        }
+      
+        .contador {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>San Antonio Texas, Veracruz</h1>
+
+        <div class="video-contenedor">
+            <video width="520" controls autoplay muted loop>
+                <source src="VIDEO.mp4" type="VIDEO/mp4">
+            </video>
+        </div>
+        <a href="lugares.html" class="boton">LUGARES DE INTERÉS</a>
+        <a href="economia.html" class="boton">ECONOMÍA</a>
+        <a href="taller.html" class="boton">TALLER MECÁNICO</a>
+
+<div style="text-align: center; margin-top: 40px; padding: 15px; background-color: rgba(255,255,255,0.7); border-radius: 10px; display: inline-block; margin-left: auto; margin-right: auto;">
+    <p style="font-weight: bold; color: #2c3e50; margin: 0 0 10px 0;">👀 Visitas a la página:</p>
+    <a href="https://www.contadorvisitasgratis.com" title="contador de visitas">
+        <img src="VISITAS.JPG" 
+             border="0" 
+             title="contador de visitas" 
+             alt="contador de visitas"
+             style="width: 180px; height: auto; border-radius: 5px;">
+    </a>
+</div>
+    </div>
+<audio id="MUSIC FONDO" src="MUSIC FONDO.mp3" autoplay loop preload="auto">
+  Tu navegador no admite la reproducción de audio.
+<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 10px 15px; border-radius: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 999;">
+  <button onclick="alternarAudio()" style="border: none; background: none; font-size: 22px; cursor: pointer;">🔊</button>
+  <input type="range" min="0" max="100" value="30" id="volumen" style="width: 90px;">
+</div>
+
+<script>
+  const audio = document.getElementById('MUSIC FONDO');
+  audio.volume = 0.3;
+  document.getElementById('volumen').addEventListener('input', function() {
+    audio.volume = this.value / 100;
+  });
+  function alternarAudio() {
+    audio.muted = !audio.muted;
+    document.querySelector('button').textContent = audio.muted ? '🔇' : '🔊';
+  }
+  document.addEventListener('click', () => audio.play(), { once: true });
+</script>
+
+</body>
+</html>

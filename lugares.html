@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares de Interés</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('fondo3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        .contenedor {
+            background-color: rgba(255, 255, 255, 0.85);
+            margin: 50px auto;
+            width: 80%;
+            max-width: 900px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font: italic bold 32px Arial;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .lugar {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .lugar:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .lugar h3 {
+            font: italic bold 22px Arial;
+            color: #27ae60;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        /* Estilo para las imágenes */
+        .imagen-lugar {
+            text-align: center;
+            margin: 15px auto;
+        }
+        .imagen-lugar img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .lugar p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 0;
+        }
+        .boton-regreso {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 12px 25px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        .boton-regreso:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Lugares de Interés</h1>
+
+       
+        <div class="lugar">
+            <h3>Parque</h3>
+           
+            <div class="imagen-lugar">
+                <img src="parque.jpg" alt="Parque de San Antonio Texas">
+            </div>
+            <p>Es uno de los espacios más queridos y frecuentados por las familias de San Antonio Texas. Por las tardes se llena de vida: niños corriendo, familias platicando y grupos de habitantes que se reúnen para practicar voleibol, que es uno de los deportes más tradicionales y populares de la comunidad. Cuenta con áreas verdes bien cuidadas, bancas para descansar y mucha sombra gracias a los árboles grandes que lo rodean, convirtiéndose en el punto de encuentro ideal para pasar la tarde, convivir con los vecinos y disfrutar de un ambiente tranquilo y seguro.</p>
+        </div>
+
+        <div class="lugar">
+            <h3>Campo Deportivo</h3>
+           
+            <div class="imagen-lugar">
+                <img src="campo.jpg" alt="Campo deportivo de la comunidad">
+            </div>
+            <p>Es el corazón deportivo y social de la localidad. Cuenta con instalaciones amplias donde los jóvenes, alumnos de la secundaria y del bachillerato practican y juegan partidos de fútbol casi todos los días. Además, es tan reconocido por sus buenas condiciones que llegan visitantes de comunidades cercanas como Los Naranjos y Tres Valles para jugar torneos y encuentros de béisbol, un deporte con mucha tradición en la zona. Pero no solo es para deporte: este espacio también se utiliza para eventos especiales, como jaripeos tradicionales, fiestas de cumpleaños grandes, reuniones familiares y celebraciones de fechas importantes para todo el pueblo.</p>
+        </div>
+
+        
+        <div class="lugar">
+            <h3>La Iglesia</h3>
+            
+            <div class="imagen-lugar">
+                <img src="iglesia.jpg" alt="Iglesia de San Antonio Texas">
+            </div>
+            <p>Es el edificio más representativo y con mayor valor histórico y cultural de San Antonio Texas. Su construcción y arquitectura son parte de la identidad del lugar, y ha sido testigo de generaciones de historia. Aquí se realizan las misas dominicales y todas las celebraciones religiosas importantes del calendario, como fiestas patronales, procesiones, bodas, bautizos y primeras comuniones. Es el centro espiritual de la comunidad, un lugar de fe, encuentro y tradición donde los habitantes se reúnen para compartir su cultura y sus creencias, manteniendo vivas las costumbres que han pasado de padres a hijos.</p>
+        </div>
+
+        <a href="index.html" class="boton-regreso">⬅️ Regresar al Inicio</a>
+    </div>
+<audio id="MUSIC FONDO" src="MUSIC FONDO.mp3" autoplay loop preload="auto">
+  Tu navegador no admite la reproducción de audio.
+<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 10px 15px; border-radius: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 999;">
+  <button onclick="alternarAudio()" style="border: none; background: none; font-size: 22px; cursor: pointer;">🔊</button>
+  <input type="range" min="0" max="100" value="30" id="volumen" style="width: 90px;">
+</div>
+
+<script>
+  const audio = document.getElementById('MUSIC FONDO');
+  audio.volume = 0.3;
+  document.getElementById('volumen').addEventListener('input', function() {
+    audio.volume = this.value / 100;
+  });
+  function alternarAudio() {
+    audio.muted = !audio.muted;
+    document.querySelector('button').textContent = audio.muted ? '🔇' : '🔊';
+  }
+  document.addEventListener('click', () => audio.play(), { once: true });
+</script>
+</body>
+</html>
